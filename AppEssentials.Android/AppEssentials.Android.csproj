@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{412854B4-62B3-48E2-8CC5-851DBD22C15B}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AppEssentials.Droid</RootNamespace>
+    <AssemblyName>AppEssentials.Droid</AssemblyName>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidSupportedAbis>arm64-v8a;armeabi;armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
+    <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppEssentials.Shared\AppEssentials.Shared.csproj">
+      <Project>{40591A55-A5BD-4254-A399-7BECE46EDCD5}</Project>
+      <Name>AppEssentials.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Tabbar.axml" />
+    <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-nodpi\icon.png" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_01.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_02.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_03.png" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_04.png" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_05.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_06.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_07.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_08.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_09.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_10.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_11.jpeg" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_12.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_13.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_14.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\m_15.jpg" />
+    <AndroidResource Include="Resources\drawable\hamburger.png" />
+    <AndroidResource Include="Resources\drawable-nodpi\ragnarok.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_1.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_10.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_11.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_12.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_13.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_14.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_15.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_16.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_17.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_18.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_19.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_2.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_3.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_4.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_5.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_6.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_7.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_8.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\cat_9.jpg" />
+    <AndroidResource Include="Resources\drawable-nodpi\seattle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Compat">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Core.UI">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Core.Utils">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.CustomTabs">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Design">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Fragment">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Media.Compat">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Transition">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v4">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.CardView">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.Palette">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.Vector.Drawable">
+      <Version>27.0.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>3.4.0.1008975</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\FontAwesome.otf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+</Project>
