@@ -14,6 +14,8 @@
                 <x:Array Type="{x:Type models:MasterPageItem}">
                     <models:MasterPageItem Title="Login" IconSource="" TargetType="{x:Type pages:LoginPage}" />
                     <models:MasterPageItem Title="Battery Info" IconSource="" TargetType="{x:Type pages:BatteryStatusPage}" />
+                    <models:MasterPageItem Title="App Info" IconSource="" TargetType="{x:Type pages:AppInfoPage}" />
+                    <models:MasterPageItem Title="Share" IconSource="" TargetType="{x:Type pages:SharePage}" />
                 </x:Array>
             </ListView.ItemsSource>
             <ListView.ItemTemplate>

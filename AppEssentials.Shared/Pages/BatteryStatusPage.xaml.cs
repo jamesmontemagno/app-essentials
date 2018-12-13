@@ -33,7 +33,8 @@ namespace AppEssentials.Shared.Pages
         void SetBackground(double level, bool charging)
         {
             Color? color = null;
-            var status = "";
+            var status = charging ? "Charging" : "Not charging";
+
             if(level > .5f)
             {
                 color = Color.Green.MultiplyAlpha(level);
