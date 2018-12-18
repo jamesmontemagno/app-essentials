@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using Xamarin.Essentials;
+
 namespace AppEssentials.Shared.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -15,6 +17,11 @@ namespace AppEssentials.Shared.Pages
 		public AppInfoPage ()
 		{
 			InitializeComponent ();
-		}
+
+            LabelAppInfo.Text = $"{AppInfo.Name}";
+            LabelVersionInfo.Text = $"{AppInfo.VersionString} " +
+                $"{AppInfo.BuildString}";
+
+        }
 	}
 }

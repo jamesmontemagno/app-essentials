@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppEssentials.Shared.Pages.SharePage">
@@ -14,7 +14,10 @@
             <Button x:Name="ButtonShare" 
                     Clicked="ButtonShare_Clicked"
                     VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="Center"/>
+                    HorizontalOptions="Center"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    Text="Share"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

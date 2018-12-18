@@ -1,7 +1,8 @@
 ﻿
-using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
+using Xamarin.Essentials;
 
 namespace AppEssentials.Shared.Pages
 {
@@ -11,24 +12,29 @@ namespace AppEssentials.Shared.Pages
         public BatteryStatusPage()
         {
             InitializeComponent();
+            SetBackground(Battery.ChargeLevel,
+            Battery.State == BatteryState.Charging);
 
-            Battery.BatteryInfoChanged += Battery_BatteryInfoChanged;
         }
 
-        private void Battery_BatteryInfoChanged(object sender, BatteryInfoChangedEventArgs e)
-        {
-            SetBackground(e.ChargeLevel, e.State == BatteryState.Charging || e.State == BatteryState.Full);
-        }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            Battery.BatteryInfoChanged += Battery_BatteryInfoChanged;
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+            Battery.BatteryInfoChanged -= Battery_BatteryInfoChanged;
         }
+
+        void Battery_BatteryInfoChanged(object sender, BatteryInfoChangedEventArgs e)
+        {
+            SetBackground(e.ChargeLevel, e.State == BatteryState.Charging);
+        }
+
 
         void SetBackground(double level, bool charging)
         {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace AppEssentials.Shared.Pages
 {
@@ -17,9 +18,13 @@ namespace AppEssentials.Shared.Pages
 			InitializeComponent ();
 		}
 
-        private void ButtonShare_Clicked(object sender, EventArgs e)
+        private async void ButtonShare_Clicked(object sender, EventArgs e)
         {
-
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Text = EntryShare.Text,
+                Title = "Share!"
+            });
         }
     }
 }
