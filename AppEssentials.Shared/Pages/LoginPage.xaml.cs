@@ -14,13 +14,36 @@ namespace AppEssentials.Shared.Pages
             BindingContext = this;
 		}
 
+        bool rememberMe = false;
 
-		void Handle_Clicked(object sender, EventArgs e)
+        public bool RememberMe
+        {
+            get => rememberMe;
+            set
+            {
+                rememberMe = value;
+                OnPropertyChanged(nameof(RememberMe));
+            }
+        }
+
+        string username = string.Empty;
+        public string Username
+        {
+            get => username;
+            set
+            {
+                username = value;
+                OnPropertyChanged(nameof(RememberMe));
+            }
+        }
+
+
+        async void Handle_Clicked(object sender, EventArgs e)
 		{
 
             if(Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
-                DisplayAlert("No Intenet", "", "OK");
+                await DisplayAlert("No Intenet", "", "OK");
                 return;
             }
 
@@ -38,8 +61,11 @@ namespace AppEssentials.Shared.Pages
 				isValid = false;
 			}
 
-			if (isValid)
-				DisplayAlert("Login Success", "", "Thanks!");
+            if (isValid)
+            {
+                await DisplayAlert("Login Success", "", "Thanks!");
+                await Navigation.PushAsync(new ClipboardPage());
+            }
 		}
         
         protected override void OnAppearing()
@@ -96,15 +122,6 @@ namespace AppEssentials.Shared.Pages
             VisualStateManager.GoToState(this.StrengthIndicator, strengthName);
         }
 
-        public bool RememberMe
-        {
-            get => Preferences.Get(nameof(RememberMe), false);
-            set
-            {
-                Preferences.Set(nameof(RememberMe), value);
-                OnPropertyChanged(nameof(RememberMe));
-            }
-        }
 
         string strength;
 

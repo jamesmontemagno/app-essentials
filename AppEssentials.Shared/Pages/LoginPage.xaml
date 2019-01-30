@@ -23,6 +23,7 @@
                     <Entry x:Name="UserNameEntry" 
                        IsSpellCheckEnabled="false" 
                        MaxLength="7" 
+                       Text="{Binding Username}"
                        Placeholder="UserName"
                        TextColor="{OnPlatform Android='#f1f1f1'}"
                        PlaceholderColor="{OnPlatform Android='#999'}">
