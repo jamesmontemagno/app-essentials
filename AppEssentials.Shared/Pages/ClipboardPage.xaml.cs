@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using Xamarin.Essentials;
+
 namespace AppEssentials.Shared.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -21,6 +23,19 @@ namespace AppEssentials.Shared.Pages
         {
             if (EntryPin.Text == "1234")
                 DisplayAlert("You did it!", "Pin was accepted!", "OK");
+        }
+
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if(Clipboard.HasText)
+            {
+                var text = await Clipboard.GetTextAsync();
+                if (text.Length == 4)
+                    EntryPin.Text = text;
+            }
         }
     }
 }

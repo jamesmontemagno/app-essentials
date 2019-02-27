@@ -18,21 +18,27 @@ namespace AppEssentials.Shared.Pages
 
         public bool RememberMe
         {
-            get => rememberMe;
+            get => Preferences.Get(nameof(RememberMe), false);
             set
             {
-                rememberMe = value;
+                Preferences.Set(nameof(RememberMe), value);
+                if(!value)
+                {
+                    Preferences.Set(nameof(Username), string.Empty);
+                }
                 OnPropertyChanged(nameof(RememberMe));
             }
         }
 
-        string username = string.Empty;
+        string username = Preferences.Get(nameof(Username), string.Empty);
         public string Username
         {
             get => username;
             set
             {
                 username = value;
+                if (RememberMe)
+                    Preferences.Set(nameof(Username), value);
                 OnPropertyChanged(nameof(RememberMe));
             }
         }
@@ -63,16 +69,34 @@ namespace AppEssentials.Shared.Pages
 
             if (isValid)
             {
-                await DisplayAlert("Login Success", "", "Thanks!");
-                await Navigation.PushAsync(new ClipboardPage());
+                try
+                {
+                    await SecureStorage.SetAsync("token", PasswordEntry.Text);
+                }
+                catch (Exception ex)
+                {
+                    // Possible that device doesn't support secure storage on device.
+                }
+                //await DisplayAlert("Login Success", "", "Thanks!");
+                //await Clipboard.SetTextAsync("1234");
+                //await Navigation.PushAsync(new ClipboardPage());
             }
 		}
         
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
             InitStates();
             Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+            try
+            {
+                var password = await SecureStorage.GetAsync("token");
+                PasswordEntry.Text = password;
+            }
+            catch (Exception ex)
+            {
+                // Possible that device doesn't support secure storage on device.
+            }
         }
 
         private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
