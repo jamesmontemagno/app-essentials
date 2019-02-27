@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEssentials.Shared.Pages.ClipboardPage">
+    <ContentPage.Content>
+        <StackLayout
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+            <Label Text="Enter Pin:" />
+            <Entry x:Name="EntryPin" Placeholder="4 digit pin"/>
+            <Button Text="Submit" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
