@@ -1,64 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppEssentials.Shared.Pages.LoginPage"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
-             ios:Page.LargeTitleDisplay="Never">
-    
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppEssentials.Shared.Pages.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.LargeTitleDisplay="Never">
+
     <ContentPage.Resources>
-        <ResourceDictionary Source="../Resources/FontRD.xaml"/>
-        <ResourceDictionary Source="../Resources/EntryValidationRD.xaml"/>
-        <StyleSheet Source="../Styles/LoginPage.css"/>
+        <ResourceDictionary Source="../Resources/FontRD.xaml" />
+        <ResourceDictionary Source="../Resources/EntryValidationRD.xaml" />
+        <StyleSheet Source="../Styles/LoginPage.css" />
     </ContentPage.Resources>
 
     <Grid RowSpacing="0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <FlexLayout StyleClass="body" x:Name="Form">
+        <FlexLayout x:Name="Form" StyleClass="body">
             <FlexLayout x:Name="LoginForm" StyleClass="container">
-                <Label Text="Hello, Please Login" StyleClass="logo"/>
+                <Label StyleClass="logo" Text="Hello, Please Login" />
                 <FlexLayout StyleClass="login-form">
-                    <Entry x:Name="UserNameEntry" 
-                       IsSpellCheckEnabled="false" 
-                       MaxLength="7" 
-                       Text="{Binding Username}"
-                       Placeholder="UserName"
-                       TextColor="{OnPlatform Android='#f1f1f1'}"
-                       PlaceholderColor="{OnPlatform Android='#999'}">
-                    </Entry>
-                    <Entry x:Name="PasswordEntry" 
-                       TextChanged="Handle_TextChanged" 
-                       Placeholder="Password"
-                       IsPassword="true"
-                       TextColor="{OnPlatform Android='#f1f1f1'}"
-                       PlaceholderColor="{OnPlatform Android='#999'}">
-                    </Entry>
+                    <Entry
+                        x:Name="UserNameEntry"
+                        IsSpellCheckEnabled="false"
+                        MaxLength="7"
+                        Placeholder="UserName"
+                        PlaceholderColor="{OnPlatform Android='#999'}"
+                        Text="{Binding Username}"
+                        TextColor="{OnPlatform Android='#f1f1f1'}" />
+                    <Entry
+                        x:Name="PasswordEntry"
+                        IsPassword="true"
+                        Placeholder="Password"
+                        PlaceholderColor="{OnPlatform Android='#999'}"
+                        TextChanged="Handle_TextChanged"
+                        TextColor="{OnPlatform Android='#f1f1f1'}" />
 
-                    <Label x:Name="StrengthIndicator"
-                       Style="{StaticResource FAStyle}"
-                       Text=""
-                       FontSize="24"
-                       StyleClass="strength"
-                       HorizontalTextAlignment="Center" 
-                       HorizontalOptions="Center" />
+                    <Label
+                        x:Name="StrengthIndicator"
+                        FontSize="24"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Style="{StaticResource FAStyle}"
+                        StyleClass="strength"
+                        Text="" />
 
-                    <Button Text="Login" Clicked="Handle_Clicked"/>
+                    <Button Clicked="LoginClicked" Text="Login" />
 
-                    <StackLayout Orientation="Horizontal" IsVisible="True" Margin="50,10">
-                        <Label Text="Remember Me: "/>
-                        <Switch IsToggled="{Binding RememberMe}"/>
+                    <StackLayout
+                        Margin="50,10"
+                        IsVisible="True"
+                        Orientation="Horizontal">
+                        <Label Text="Remember Me: " />
+                        <Switch IsToggled="{Binding RememberMe}" />
                     </StackLayout>
                 </FlexLayout>
             </FlexLayout>
 
         </FlexLayout>
 
-        <Label Grid.Row="1" Margin="10" 
-               HorizontalOptions="Center"
-               Text="Disconnected" 
-               x:Name="LabelConnection" 
-               Opacity="0"/>
+        <Label
+            x:Name="LabelForgotPassword"
+            Grid.Row="2"
+            Margin="10"
+            HorizontalOptions="Center"
+            Text="Forgot Password?"
+            TextColor="Blue"
+            TextDecorations="Underline">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ForgotPasswordTapped" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Label
+            x:Name="LabelConnection"
+            Grid.Row="1"
+            Margin="10"
+            HorizontalOptions="Center"
+            IsVisible="False"
+            Opacity="0"
+            Text="Disconnected" />
     </Grid>
 </ContentPage>

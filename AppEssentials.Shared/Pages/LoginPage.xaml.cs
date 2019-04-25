@@ -14,7 +14,10 @@ namespace AppEssentials.Shared.Pages
             BindingContext = this;
 		}
 
-        bool rememberMe = false;
+        private async void ForgotPasswordTapped(object sender, EventArgs e)
+        {
+            await Browser.OpenAsync("http://xamarin.com", BrowserLaunchMode.SystemPreferred);
+        }
 
         public bool RememberMe
         {
@@ -44,7 +47,9 @@ namespace AppEssentials.Shared.Pages
         }
 
 
-        async void Handle_Clicked(object sender, EventArgs e)
+
+
+        async void LoginClicked(object sender, EventArgs e)
 		{
 
             if(Connectivity.NetworkAccess != NetworkAccess.Internet)
@@ -88,6 +93,9 @@ namespace AppEssentials.Shared.Pages
             base.OnAppearing();
             InitStates();
             Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+
+            Accelerometer.ShakeDetected += Accelerometer_ShakeDetected;
+
             try
             {
                 var password = await SecureStorage.GetAsync("token");
@@ -97,6 +105,17 @@ namespace AppEssentials.Shared.Pages
             {
                 // Possible that device doesn't support secure storage on device.
             }
+
+            Accelerometer.Start(SensorSpeed.Game);
+        }
+
+        private void Accelerometer_ShakeDetected(object sender, EventArgs e)
+        {
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                PasswordEntry.Text = string.Empty;
+                UserNameEntry.Text = string.Empty;
+            });
         }
 
         private void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
@@ -115,6 +134,8 @@ namespace AppEssentials.Shared.Pages
         {
             base.OnDisappearing();
             Connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
+            Accelerometer.ShakeDetected -= Accelerometer_ShakeDetected;
+            Accelerometer.Stop();
         }
 
 
@@ -171,6 +192,7 @@ namespace AppEssentials.Shared.Pages
                 Setters = { textSetter, colorSetter }
             };
         }
+
     }
 
 }

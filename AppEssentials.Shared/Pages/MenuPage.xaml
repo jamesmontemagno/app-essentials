@@ -1,22 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:models="clr-namespace:AppEssentials.Shared.Models"
-             xmlns:pages="clr-namespace:AppEssentials.Shared.Pages"
-             Padding="0,40,0,0"
-             Title="Menu" 
-             Icon="hamburger.png"
-             BackgroundColor="#3a3f44"
-             x:Class="AppEssentials.Shared.Pages.MenuPage">
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="AppEssentials.Shared.Pages.MenuPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:AppEssentials.Shared.Models"
+    xmlns:pages="clr-namespace:AppEssentials.Shared.Pages"
+    Title="Menu"
+    Padding="0,40,0,0"
+    BackgroundColor="#3a3f44"
+    Icon="hamburger.png">
     <StackLayout>
         <ListView x:Name="listView" BackgroundColor="Transparent">
-           <ListView.ItemsSource>
+            <ListView.ItemsSource>
                 <x:Array Type="{x:Type models:MasterPageItem}">
-                    <models:MasterPageItem Title="Login" IconSource="" TargetType="{x:Type pages:LoginPage}" />
-                    <models:MasterPageItem Title="Battery Info" IconSource="" TargetType="{x:Type pages:BatteryStatusPage}" />
-                    <models:MasterPageItem Title="App Info" IconSource="" TargetType="{x:Type pages:AppInfoPage}" />
-                    <models:MasterPageItem Title="Share" IconSource="" TargetType="{x:Type pages:SharePage}" />
-                    <models:MasterPageItem Title="Connectivity" IconSource="" TargetType="{x:Type pages:ConnectivityPage}" />
+                    <models:MasterPageItem
+                        Title="Login"
+                        IconSource=""
+                        TargetType="{x:Type pages:LoginPage}" />
+                    <models:MasterPageItem
+                        Title="Battery Info"
+                        IconSource=""
+                        TargetType="{x:Type pages:BatteryStatusPage}" />
+                    <models:MasterPageItem
+                        Title="App Info"
+                        IconSource=""
+                        TargetType="{x:Type pages:AppInfoPage}" />
+                    <models:MasterPageItem
+                        Title="Share"
+                        IconSource=""
+                        TargetType="{x:Type pages:SharePage}" />
+                    <models:MasterPageItem
+                        Title="Connectivity"
+                        IconSource=""
+                        TargetType="{x:Type pages:ConnectivityPage}" />
+                    <models:MasterPageItem
+                        Title="Geocoding"
+                        IconSource=""
+                        TargetType="{x:Type pages:GeocodingPage}" />
                 </x:Array>
             </ListView.ItemsSource>
             <ListView.ItemTemplate>
@@ -24,11 +44,14 @@
                     <ViewCell>
                         <Grid Padding="5,10">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="30" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Image Source="{Binding IconSource}" />
-                            <Label TextColor="#F1F1F1" Grid.Column="1" Text="{Binding Title}" />
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding Title}"
+                                TextColor="#F1F1F1" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
