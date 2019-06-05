@@ -192,7 +192,7 @@
       <Version>1.1.0</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>3.6.0.293080</Version>
+      <Version>3.6.0.344457</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -246,6 +246,9 @@
     <BundleResource Include="Resources\hamburger.png" />
     <BundleResource Include="Resources\ragnarok.jpg" />
     <BundleResource Include="Resources\seattle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FileSystemTemplate.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

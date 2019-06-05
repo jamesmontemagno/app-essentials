@@ -11,7 +11,11 @@ namespace AppEssentials
 		{
 			InitializeComponent();
 
+            Xamarin.Essentials.VersionTracking.Track();
+
 			MainPage = new MasterPage();
+
+
 		}
 
 		protected override void OnStart()

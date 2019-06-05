@@ -37,6 +37,22 @@
                         Title="Geocoding"
                         IconSource=""
                         TargetType="{x:Type pages:GeocodingPage}" />
+                    <models:MasterPageItem
+                        Title="File Helpers"
+                        IconSource=""
+                        TargetType="{x:Type pages:FileSystemPage}" />
+                    <models:MasterPageItem
+                        Title="Version Tracking"
+                        IconSource=""
+                        TargetType="{x:Type pages:VersionTrackingPage}" />
+                    <models:MasterPageItem
+                        Title="Main Thread"
+                        IconSource=""
+                        TargetType="{x:Type pages:MainThreadPage}" />
+                    <models:MasterPageItem
+                        Title="Email"
+                        IconSource=""
+                        TargetType="{x:Type pages:EmailPage}" />
                 </x:Array>
             </ListView.ItemsSource>
             <ListView.ItemTemplate>
