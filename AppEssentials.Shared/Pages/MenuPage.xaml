@@ -53,6 +53,14 @@
                         Title="Email"
                         IconSource=""
                         TargetType="{x:Type pages:EmailPage}" />
+                    <models:MasterPageItem
+                        Title="Sms"
+                        IconSource=""
+                        TargetType="{x:Type pages:SmsPage}" />
+                    <models:MasterPageItem
+                        Title="Phone Dialer"
+                        IconSource=""
+                        TargetType="{x:Type pages:PhoneDialerPage}" />
                 </x:Array>
             </ListView.ItemsSource>
             <ListView.ItemTemplate>
