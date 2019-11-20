@@ -18,49 +18,61 @@
                         IconSource=""
                         TargetType="{x:Type pages:LoginPage}" />
                     <models:MasterPageItem
-                        Title="Battery Info"
-                        IconSource=""
-                        TargetType="{x:Type pages:BatteryStatusPage}" />
-                    <models:MasterPageItem
                         Title="App Info"
                         IconSource=""
                         TargetType="{x:Type pages:AppInfoPage}" />
                     <models:MasterPageItem
-                        Title="Share"
+                        Title="Battery Info"
                         IconSource=""
-                        TargetType="{x:Type pages:SharePage}" />
+                        TargetType="{x:Type pages:BatteryStatusPage}" />
                     <models:MasterPageItem
                         Title="Connectivity"
                         IconSource=""
                         TargetType="{x:Type pages:ConnectivityPage}" />
                     <models:MasterPageItem
-                        Title="Geocoding"
+                        Title="Email"
                         IconSource=""
-                        TargetType="{x:Type pages:GeocodingPage}" />
+                        TargetType="{x:Type pages:EmailPage}" />
                     <models:MasterPageItem
                         Title="File Helpers"
                         IconSource=""
                         TargetType="{x:Type pages:FileSystemPage}" />
                     <models:MasterPageItem
-                        Title="Version Tracking"
+                        Title="Geocoding"
                         IconSource=""
-                        TargetType="{x:Type pages:VersionTrackingPage}" />
+                        TargetType="{x:Type pages:GeocodingPage}" />
+                    <models:MasterPageItem
+                        Title="Launcher"
+                        IconSource=""
+                        TargetType="{x:Type pages:LauncherPage}" />
                     <models:MasterPageItem
                         Title="Main Thread"
                         IconSource=""
                         TargetType="{x:Type pages:MainThreadPage}" />
                     <models:MasterPageItem
-                        Title="Email"
+                        Title="Phone Dialer"
                         IconSource=""
-                        TargetType="{x:Type pages:EmailPage}" />
+                        TargetType="{x:Type pages:PhoneDialerPage}" />
+                    <models:MasterPageItem
+                        Title="Share"
+                        IconSource=""
+                        TargetType="{x:Type pages:SharePage}" />
                     <models:MasterPageItem
                         Title="Sms"
                         IconSource=""
                         TargetType="{x:Type pages:SmsPage}" />
                     <models:MasterPageItem
-                        Title="Phone Dialer"
+                        Title="Unit Converters"
                         IconSource=""
-                        TargetType="{x:Type pages:PhoneDialerPage}" />
+                        TargetType="{x:Type pages:UnitConvertersPage}" />
+                    <models:MasterPageItem
+                        Title="Version Tracking"
+                        IconSource=""
+                        TargetType="{x:Type pages:VersionTrackingPage}" />
+                    <models:MasterPageItem
+                        Title="Vibrate"
+                        IconSource=""
+                        TargetType="{x:Type pages:VibratePage}" />
                 </x:Array>
             </ListView.ItemsSource>
             <ListView.ItemTemplate>
