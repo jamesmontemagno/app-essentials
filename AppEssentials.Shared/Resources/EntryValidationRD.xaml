@@ -8,7 +8,7 @@
                     <VisualStateGroup>
                         <VisualState x:Name="Valid">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="White"></Setter>
+                                <Setter Property="BackgroundColor" Value="#0A2239"></Setter>
                             </VisualState.Setters>
                         </VisualState>
                         <VisualState x:Name="Invalid">

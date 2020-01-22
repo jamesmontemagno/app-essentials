@@ -2,7 +2,7 @@
 using Utils;
 using Xamarin.Forms;
 using Xamarin.Essentials;
-
+using AppEssentials.Shared.Models;
 
 namespace AppEssentials.Shared.Pages
 {
@@ -65,15 +65,27 @@ namespace AppEssentials.Shared.Pages
 				VisualStateManager.GoToState(UserNameEntry, "Invalid");
 				isValid = false;
 			}
+            else
+            {
+                VisualStateManager.GoToState(UserNameEntry, "Valid");
+            }
 
 			if (string.IsNullOrEmpty(PasswordEntry.Text) || PasswordEntry.Text.Length < 5)
 			{
 				VisualStateManager.GoToState(PasswordEntry, "Invalid");
 				isValid = false;
 			}
+            else
+            {
+                VisualStateManager.GoToState(PasswordEntry, "Valid");
+            }
+
+            var service = DependencyService.Get<IStatusBar>();
+            service?.SetStatusBarColor(isValid ? Color.Green : Color.Red);
 
             if (isValid)
             {
+                
                 try
                 {
                     await SecureStorage.SetAsync("token", PasswordEntry.Text);

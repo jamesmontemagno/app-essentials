@@ -19,7 +19,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <FlexLayout x:Name="Form" StyleClass="body">
-            <FlexLayout x:Name="LoginForm" StyleClass="container">
+            <StackLayout x:Name="LoginForm" StyleClass="container">
                 <Label StyleClass="logo" Text="Hello, Please Login" />
                 <FlexLayout StyleClass="login-form">
                     <Entry
@@ -57,7 +57,7 @@
                         <Switch IsToggled="{Binding RememberMe}" />
                     </StackLayout>
                 </FlexLayout>
-            </FlexLayout>
+            </StackLayout>
 
         </FlexLayout>
 

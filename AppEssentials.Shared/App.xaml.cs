@@ -1,6 +1,7 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using AppEssentials.Shared.Pages;
+using AppEssentials.Shared;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace AppEssentials
@@ -13,10 +14,9 @@ namespace AppEssentials
 
             Xamarin.Essentials.VersionTracking.Track();
 
-			MainPage = new MasterPage();
 
-
-		}
+            MainPage = new AppShell();
+        }
 
 		protected override void OnStart()
 		{

@@ -3,6 +3,10 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using AppEssentials.Shared.Models;
+using Xamarin.Forms;
+using System.Drawing;
+using Xamarin.Essentials;
 
 namespace AppEssentials.Droid
 {
@@ -16,8 +20,10 @@ namespace AppEssentials.Droid
 
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Forms.Init(this, savedInstanceState);
 
+            DependencyService.Register<IStatusBar, StatusBarChanger>();
+            
             LoadApplication(new App());
         }
 
@@ -27,5 +33,25 @@ namespace AppEssentials.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+       
+    }
+
+    public class StatusBarChanger : IStatusBar
+    {
+        public void SetStatusBarColor(System.Drawing.Color color)
+        {
+            if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.Lollipop)
+                return;
+
+            var window = ((MainActivity)Forms.Context).Window;
+            window.AddFlags(Android.Views.WindowManagerFlags.DrawsSystemBarBackgrounds);
+            window.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
+            var androidColor = color.ToPlatformColor();
+
+            window.SetStatusBarColor(androidColor);
+            
+        }
+
     }
 }
