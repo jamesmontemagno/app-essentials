@@ -1,61 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="AppEssentials.App">
+<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="AppEssentials.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
-        <!-- Application resource dictionary -->
-        <Style x:Key="FAFontStyle" TargetType="Label">  
+        <!--  Application resource dictionary  -->
+        <Style x:Key="FAFontStyle" TargetType="Label">
             <Setter Property="FontSize">
                 <Setter.Value>
                     <OnPlatform x:TypeArguments="x:Double">
-                        <On Platform="iOS" Value="24"></On>
-                        <On Platform="WinRT, UWP, Android" Value="18"></On>
+                        <On Platform="iOS" Value="24" />
+                        <On Platform="WinRT, UWP, Android" Value="18" />
                     </OnPlatform>
                 </Setter.Value>
             </Setter>
-            <Setter Property="VerticalTextAlignment"
-                        Value="Center" />
-            <Setter Property="HorizontalTextAlignment"
-                        Value="Center" />
-            <Setter Property="FontFamily">
-                <Setter.Value>
-                    <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="UWP" Value="Segoe MDL2 Assets"></On>
-                        <On Platform="iOS" Value="FontAwesome"></On>
-                        <On Platform="Android" Value="FontAwesome.otf#FontAwesome"></On>
-                    </OnPlatform>
-                </Setter.Value>
-            </Setter>
-        </Style> 
-
-        <Style
-            x:Key="NakedButton"
-            TargetType="Button">
-            <Setter
-                Property="BackgroundColor"
-                Value="Transparent" />
-            <Setter
-                Property="TextColor"
-                Value="#fff" />
-            <Setter 
-                Property="BorderColor"
-                Value="Transparent"/>
-            <Setter 
-                Property="BorderWidth"
-                Value="0"/>
-            <Setter
-                Property="FontSize"
-                Value="16" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="FA" />
         </Style>
 
-        <Style x:Key="IconFontButton" BasedOn="{StaticResource NakedButton}" TargetType="Button">  
-            <Setter Property="FontFamily">
-                <Setter.Value>
-                    <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="UWP" Value="Segoe MDL2 Assets"></On>
-                        <On Platform="iOS" Value="FontAwesome"></On>
-                        <On Platform="Android" Value="FontAwesome.otf#FontAwesome"></On>
-                    </OnPlatform>
-                </Setter.Value>
-            </Setter>
+        <Style x:Key="NakedButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="TextColor" Value="#fff" />
+            <Setter Property="BorderColor" Value="Transparent" />
+            <Setter Property="BorderWidth" Value="0" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+
+        <Style
+            x:Key="IconFontButton"
+            BasedOn="{StaticResource NakedButton}"
+            TargetType="Button">
+            <Setter Property="FontFamily" Value="FA" />
         </Style>
     </Application.Resources>
 </Application>

@@ -1,7 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" 
-          android:versionCode="2" android:versionName="1.1" 
-          package="com.xamarin.AppEssentials" android:installLocation="auto">
-	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="28" />
-	<application android:label="AppEssentials"></application>
+          android:versionCode="2" android:versionName="1.1" package="com.xamarin.AppEssentials"
+          android:installLocation="auto">
+
+  <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="30" />
+  <application android:label="AppEssentials" android:icon="@mipmap/ic_launcher"
+    android:roundIcon="@mipmap/ic_launcher_round"></application>
+  <queries>
+    <intent>
+      <action android:name="android.intent.action.SENDTO" />
+      <data android:scheme="mailto" />
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:scheme="http"/>
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:scheme="https"/>
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:scheme="lyft"/>
+    </intent>
+    <intent>
+      <action android:name="android.intent.action.VIEW" />
+      <data android:scheme="smsto"/>
+    </intent>
+  </queries>
 </manifest>

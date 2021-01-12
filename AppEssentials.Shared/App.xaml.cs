@@ -4,6 +4,7 @@ using AppEssentials.Shared.Pages;
 using AppEssentials.Shared;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+[assembly: ExportFont("FASolid.otf", Alias = "FA")]
 namespace AppEssentials
 {
 	public partial class App : Application

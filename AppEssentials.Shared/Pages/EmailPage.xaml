@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="AppEssentials.Shared.Pages.EmailPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="12">
             <Entry Text="" Placeholder="E-mail address" x:Name="EntryEmail"/>
             <Entry Text="" Placeholder="Subject" x:Name="EntrySubject"/>
             <Button Text="Submit" Clicked="Button_Clicked"/>

@@ -7,8 +7,8 @@
              x:Class="AppEssentials.Shared.Pages.VibratePage">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Padding="12,0,12,12" Spacing="6">
-                <Slider Minimum="0" Maximum="5000" Value="100" x:Name="SliderTime" />
+            <StackLayout Padding="12" Spacing="6">
+                <Slider Minimum="0" Maximum="5000" Value="100" MinimumTrackColor="Red" x:Name="SliderTime" />
                 <Button Text="Vibrate" x:Name="ButtonVibrate" Clicked="ButtonVibrate_Clicked"/>
                 <Button Text="Cancel" x:Name="ButtonCancel" Clicked="ButtonCancel_Clicked"/>
             </StackLayout>

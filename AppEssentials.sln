@@ -1,12 +1,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEssentials.iOS", "AppEssentials.iOS\AppEssentials.iOS.csproj", "{F39E986F-B72A-4B90-8D3C-2E02DD50B785}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEssentials.Android", "AppEssentials.Android\AppEssentials.Android.csproj", "{412854B4-62B3-48E2-8CC5-851DBD22C15B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEssentials.Shared", "AppEssentials.Shared\AppEssentials.Shared.csproj", "{40591A55-A5BD-4254-A399-7BECE46EDCD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppEssentials", "AppEssentials.Shared\AppEssentials.csproj", "{40591A55-A5BD-4254-A399-7BECE46EDCD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
