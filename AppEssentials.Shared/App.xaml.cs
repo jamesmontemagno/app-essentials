@@ -2,6 +2,7 @@
 using Xamarin.Forms.Xaml;
 using AppEssentials.Shared.Pages;
 using AppEssentials.Shared;
+using Xamarin.Essentials;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 [assembly: ExportFont("FASolid.otf", Alias = "FA")]
@@ -15,13 +16,32 @@ namespace AppEssentials
 
             Xamarin.Essentials.VersionTracking.Track();
 
+            AppActions.OnAppAction += AppActions_OnAppAction;
 
             MainPage = new AppShell();
         }
 
-		protected override void OnStart()
+        private void AppActions_OnAppAction(object sender, AppActionEventArgs e)
+        {
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                if (e.AppAction.Id == "app_info")
+                    await Shell.Current.GoToAsync("//" + nameof(AppInfoPage));
+            });
+        }
+
+        protected override async void OnStart()
 		{
-			// Handle when your app starts
+            // Handle when your app starts
+
+            try
+            {
+				await AppActions.SetAsync(new AppAction("app_info", "Essentials App Info"));
+            }
+            catch (System.Exception ex)
+            {
+
+            }
 		}
 
 		protected override void OnSleep()

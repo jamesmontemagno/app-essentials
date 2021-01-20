@@ -9,6 +9,8 @@ using Xamarin.Essentials;
 
 namespace AppEssentials.Droid
 {
+    [IntentFilter(new[] { Xamarin.Essentials.Platform.Intent.ActionAppAction },
+                          Categories = new[] { Android.Content.Intent.CategoryDefault })]
     [Activity(Label = "AppEssentials", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
@@ -30,7 +32,20 @@ namespace AppEssentials.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-       
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            Xamarin.Essentials.Platform.OnResume(this);
+        }
+
+        protected override void OnNewIntent(Android.Content.Intent intent)
+        {
+            base.OnNewIntent(intent);
+
+            Xamarin.Essentials.Platform.OnNewIntent(intent);
+        }
+
     }
 
     public class StatusBarChanger : IStatusBar

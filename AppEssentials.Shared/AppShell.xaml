@@ -20,24 +20,27 @@
         <Style TargetType="ShellItem"
                BasedOn="{StaticResource BaseStyle}" />
     </Shell.Resources>
-    
-    <ShellContent Title="Login" ContentTemplate="{DataTemplate pages:LoginPage}"/>
-    <ShellContent Title="App Info" ContentTemplate="{DataTemplate pages:AppInfoPage}"/>
-    <ShellContent Title="Battery Info" ContentTemplate="{DataTemplate pages:BatteryStatusPage}"/>
-    <ShellContent Title="Connectivity" ContentTemplate="{DataTemplate pages:ConnectivityPage}"/>
-    <ShellContent Title="Device Info" ContentTemplate="{DataTemplate pages:DeviceInfoPage}"/>
-    <ShellContent Title="Email" ContentTemplate="{DataTemplate pages:EmailPage}"/>
-    <ShellContent Title="File Helpers" ContentTemplate="{DataTemplate pages:FileSystemPage}"/>
-    <ShellContent Title="Flashlight" ContentTemplate="{DataTemplate pages:FlashlightPage}"/>
-    <ShellContent Title="Geocoding" ContentTemplate="{DataTemplate pages:GeocodingPage}"/>
-    <ShellContent Title="Launcher" ContentTemplate="{DataTemplate pages:LauncherPage}"/>
-    <ShellContent Title="Main Thread" ContentTemplate="{DataTemplate pages:MainThreadPage}"/>
-    <ShellContent Title="Phone Dialer" ContentTemplate="{DataTemplate pages:PhoneDialerPage}"/>
-    <ShellContent Title="Share" ContentTemplate="{DataTemplate pages:SharePage}"/>
-    <ShellContent Title="Sms" ContentTemplate="{DataTemplate pages:SmsPage}"/>
-    <ShellContent Title="Unit Converters" ContentTemplate="{DataTemplate pages:UnitConvertersPage}"/>
-    <ShellContent Title="Version Tracking" ContentTemplate="{DataTemplate pages:VersionTrackingPage}"/>
-    <ShellContent Title="Vibrate" ContentTemplate="{DataTemplate pages:VibratePage}"/>
+
+    <ShellContent Title="Login" ContentTemplate="{DataTemplate pages:LoginPage}" Route="LoginPage"/>
+    <ShellContent Title="App Info" ContentTemplate="{DataTemplate pages:AppInfoPage}" Route="AppInfoPage"/>
+    <ShellContent Title="Battery Info" ContentTemplate="{DataTemplate pages:BatteryStatusPage}" Route="BatteryStatusPage"/>
+    <ShellContent Title="Connectivity" ContentTemplate="{DataTemplate pages:ConnectivityPage}" Route="ConnectivityPage"/>
+    <ShellContent Title="Contact Picker" ContentTemplate="{DataTemplate pages:ContactPickerPage}" Route="ContactPickerPage"/>
+    <ShellContent Title="Device Info" ContentTemplate="{DataTemplate pages:DeviceInfoPage}" Route="DeviceInfoPage"/>
+    <ShellContent Title="Email" ContentTemplate="{DataTemplate pages:EmailPage}" Route="EmailPage"/>
+    <ShellContent Title="File Helpers" ContentTemplate="{DataTemplate pages:FileSystemPage}" Route="FileSystemPage"/>
+    <ShellContent Title="File Picker" ContentTemplate="{DataTemplate pages:FilePickerPage}" Route="FilePickerPage"/>
+    <ShellContent Title="Flashlight" ContentTemplate="{DataTemplate pages:FlashlightPage}" Route="FlashlightPage"/>
+    <ShellContent Title="Geocoding" ContentTemplate="{DataTemplate pages:GeocodingPage}" Route="GeocodingPage"/>
+    <ShellContent Title="Launcher" ContentTemplate="{DataTemplate pages:LauncherPage}" Route="LauncherPage"/>
+    <ShellContent Title="Main Thread" ContentTemplate="{DataTemplate pages:MainThreadPage}" Route="MainThreadPage"/>
+    <ShellContent Title="Media Picker" ContentTemplate="{DataTemplate pages:MediaPickerPage}" Route="MediaPickerPage"/>
+    <ShellContent Title="Phone Dialer" ContentTemplate="{DataTemplate pages:PhoneDialerPage}" Route="PhoneDialerPage"/>
+    <ShellContent Title="Share" ContentTemplate="{DataTemplate pages:SharePage}" Route="SharePage"/>
+    <ShellContent Title="Sms" ContentTemplate="{DataTemplate pages:SmsPage}" Route="SmsPage"/>
+    <ShellContent Title="Unit Converters" ContentTemplate="{DataTemplate pages:UnitConvertersPage}" Route="UnitConvertersPage"/>
+    <ShellContent Title="Version Tracking" ContentTemplate="{DataTemplate pages:VersionTrackingPage}" Route="VersionTrackingPage"/>
+    <ShellContent Title="Vibrate" ContentTemplate="{DataTemplate pages:VibratePage}" Route="VibratePage"/>
 
  
 
