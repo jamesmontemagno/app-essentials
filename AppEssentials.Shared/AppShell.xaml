@@ -36,6 +36,7 @@
     <ShellContent Title="Main Thread" ContentTemplate="{DataTemplate pages:MainThreadPage}" Route="MainThreadPage"/>
     <ShellContent Title="Media Picker" ContentTemplate="{DataTemplate pages:MediaPickerPage}" Route="MediaPickerPage"/>
     <ShellContent Title="Phone Dialer" ContentTemplate="{DataTemplate pages:PhoneDialerPage}" Route="PhoneDialerPage"/>
+    <ShellContent Title="Screenshot" ContentTemplate="{DataTemplate pages:ScreenshotPage}" Route="ScreenshotPage"/>
     <ShellContent Title="Share" ContentTemplate="{DataTemplate pages:SharePage}" Route="SharePage"/>
     <ShellContent Title="Sms" ContentTemplate="{DataTemplate pages:SmsPage}" Route="SmsPage"/>
     <ShellContent Title="Unit Converters" ContentTemplate="{DataTemplate pages:UnitConvertersPage}" Route="UnitConvertersPage"/>

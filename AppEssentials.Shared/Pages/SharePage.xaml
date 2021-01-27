@@ -13,11 +13,11 @@
 
             <Button x:Name="ButtonShare" 
                     Clicked="ButtonShare_Clicked"
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="Center"
-                    TextColor="Black"
-                    BackgroundColor="Transparent"
                     Text="Share"/>
+
+            <Button x:Name="ButtonShareFile" 
+                    Clicked="ButtonShareFile_Clicked"
+                    Text="Share File"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
